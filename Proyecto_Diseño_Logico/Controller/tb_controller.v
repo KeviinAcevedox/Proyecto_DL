@@ -7,7 +7,7 @@ wire Ready, Load_Regs, Shift_Regs, Add_Regs, Decr_P;
 
 
 // Creando una instancia del controlador
-AceController FSM(
+Controller FSM(
     .Clock(Clock), .Reset(Reset), .Start(Start), .Q0(Q0),
     .Zero(Zero), .Ready(Ready), .Load_Regs(Load_Regs),
     .Shift_Regs(Shift_Regs), .Add_Regs(Add_Regs), .Decr_P(Decr_P)

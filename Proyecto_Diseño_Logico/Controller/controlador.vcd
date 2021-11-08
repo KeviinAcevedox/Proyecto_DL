@@ -1,0 +1,61 @@
+$date
+	Sun Oct 31 15:43:28 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_controller $end
+$var wire 1 ! Shift_Regs $end
+$var wire 1 " Ready $end
+$var wire 1 # Load_Regs $end
+$var wire 1 $ Decr_P $end
+$var wire 1 % Add_Regs $end
+$var reg 1 & Clock $end
+$var reg 1 ' Q0 $end
+$var reg 1 ( Reset $end
+$var reg 1 ) Start $end
+$var reg 1 * Zero $end
+$scope module FSM $end
+$var wire 1 & Clock $end
+$var wire 1 ' Q0 $end
+$var wire 1 ( Reset $end
+$var wire 1 ) Start $end
+$var wire 1 * Zero $end
+$var reg 1 % Add_Regs $end
+$var reg 3 + Current_State [2:0] $end
+$var reg 1 $ Decr_P $end
+$var reg 1 # Load_Regs $end
+$var reg 3 , Next_State [2:0] $end
+$var reg 1 " Ready $end
+$var reg 1 ! Shift_Regs $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 ,
+bx +
+0*
+0)
+0(
+0'
+0&
+x%
+x$
+x#
+x"
+x!
+$end
+#10000
+1)
+1(
+#20000
+1'
+0)
+#50000
+0'
+#70000
+1*

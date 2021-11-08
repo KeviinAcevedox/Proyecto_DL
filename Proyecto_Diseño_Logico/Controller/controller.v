@@ -12,7 +12,7 @@ reg [2:0] Current_State, Next_State;
 
 
 // Definicion de los estados posiblesç
-parameter SLEEP = 0, LOAD_DATA = 1, Q0_ONE = 2, ADD = 3, SHIFT = 4, ZERO = 5, READY = 6;
+parameter SLEEP = 3'b000, LOAD_DATA = 3'b001, Q0_ONE = 3'b010, ADD = 3'b011, SHIFT = 3'b100, DECR = 3'b101, ZERO = 3'b110, READY = 3'b111;
 
 
 // Logica de memoria
@@ -44,6 +44,10 @@ always @(*) begin
         end
 
         SHIFT: begin
+          Next_State = DECR;
+        end
+
+        DECR: begin
           Next_State = ZERO;
         end
 
@@ -84,6 +88,9 @@ always @(*) begin
 
         SHIFT: begin
             Shift_regs = 1;
+        end
+
+        DECR: begin
             Decr_P = 1;
         end
 

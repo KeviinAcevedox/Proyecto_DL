@@ -72,10 +72,16 @@ initial begin
 	Decr_P=0;
 
     #10
-	// El controlador ordena hacer shift y decremento del contador
-	// Se valida la salida Zero
+	// El controlador ordena hacer shift
     Load_regs=0;
 	Shift_regs=1;
+	Add_regs=0;
+	Decr_P=0;
+
+	#10
+	// El controlador ordena hacer decremento
+    Load_regs=0;
+	Shift_regs=0;
 	Add_regs=0;
 	Decr_P=1;
 
@@ -103,10 +109,17 @@ initial begin
 	Decr_P=0;
 
     #10
-	// El controlador ordena hacer shift y decremento del contador
+	// El controlador ordena hacer shift
 	// Se valida la salida Zero
     Load_regs=0;
 	Shift_regs=1;
+	Add_regs=0;
+	Decr_P=0;
+
+	#10
+	// El controlador ordena hacer decremento
+    Load_regs=0;
+	Shift_regs=0;
 	Add_regs=0;
 	Decr_P=1;
 

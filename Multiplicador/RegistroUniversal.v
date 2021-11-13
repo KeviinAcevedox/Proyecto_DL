@@ -8,7 +8,6 @@ module RegistroUniversal #(parameter ANCHO=8)(
 	input [ANCHO-1:0] EntradaParalela,
 	output reg [ANCHO-1:0] Salida
 );
-
 reg [ANCHO-1:0]state,next_state;
 parameter Memoria=4'b0000;
 parameter Add_regs=4'b1000,Shift_regs=4'b0100;

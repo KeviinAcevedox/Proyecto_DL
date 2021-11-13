@@ -4,8 +4,9 @@ module Datapath #(parameter ANCHO=8) (
 	input clk,Load_regs,Shift_regs,Add_regs,Decr_P,
 	input [ANCHO-1:0] Multiplicando,
 	input [ANCHO-1:0] Multiplicador,
-	output reg [ANCHO*2:0] Producto,
-    output reg Zero,Q_Cero
+	output  [ANCHO*2:0] Producto,
+    output reg Zero,
+  	output Q_Cero
 );
   
 	wire rst;
@@ -55,7 +56,7 @@ module Datapath #(parameter ANCHO=8) (
 	.rst(rst),
       .Control(4'b0001),
       .InHaciaDerecha(1'b0),
-	.ResultadoSuma(1'b0),
+	.ResultadoSuma(8'b00000000),
 	.EntradaParalela(Multiplicando),
 	.Salida(OUT_REGB_IN_SUMA)
 );
@@ -65,20 +66,24 @@ module Datapath #(parameter ANCHO=8) (
 	.rst(rst),
 	.Control(Control),
 	.InHaciaDerecha(1'b0),
-	.ResultadoSuma(1'b0),
+	.ResultadoSuma(4'b0000),
 	.EntradaParalela(4'b1000),
 	.Salida(Contador)
 );
-
+	assign Producto={Suma_MSB,OUT_REGA_IN_SUMA,OUT_REGQ};
+	assign Q_Cero = OUT_REGQ[0];
+  	
 	//Logica de salida
-  	always @(*) begin
+  	/*always @(*) begin
       if(Control == 4'b0010)
-		#0.1 assign Producto = {Suma_MSB,OUT_REGA_IN_SUMA,OUT_REGQ};
+		Producto = {Suma_MSB,OUT_REGA_IN_SUMA,OUT_REGQ};
+      else
+        Producto=0;
 	end 
-	always @(*) begin
-      assign Q_Cero = OUT_REGQ[0];
-      if(Contador==4'b0000)
+	*/always @(*) begin
+      if(Contador==4'b0000)begin
 		Zero=1;
+      end
       else
 		Zero=0;
 	end

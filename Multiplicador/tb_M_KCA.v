@@ -49,7 +49,18 @@ initial begin
     Start = 1;
     #10 
     Start = 0;
+    // Se da un tiempo estimado para que termine con la primera operacion
     #1000
+    // Se colocan nuevos numeros
+    Multiplicador = 8'b11000111;
+	Multiplicando = 8'b01010101;
+    #10
+    // Se inicia el proceso
+    Start = 1;
+    #10 
+    Start = 0;
+    #1000
+
     $finish;
 end
 endmodule

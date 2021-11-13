@@ -1,8 +1,7 @@
 `timescale 1ns/1ps
 
 // Modulo del sistema completo
-// Controlador + Ruta de datos
-module Sistema(
+module Multiplicador_KCA(
     input Start,
     input Clock,
     input Reset,
@@ -11,7 +10,7 @@ module Sistema(
 	output [16:0] Producto,
     output Ready );
 
-// Declaraciòn de los cables que conectan ambos modulos
+// Declaraciòn de los cables que conectan en ambas partes
     wire Load_regs;
     wire Shift_regs;
     wire Add_regs;
@@ -46,7 +45,6 @@ module Sistema(
         .Zero(Zero),
         .Q_Cero(Q0)
     );
-
 
 endmodule
 

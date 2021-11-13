@@ -4,7 +4,7 @@ module Sumador #(parameter ANCHO=8)(
   input [ANCHO-1:0] a,
   input [ANCHO-1:0] b,
   input cin,
-  input [ANCHO-1:0] Control,
+  input [3:0] Control,
   output reg [ANCHO-1:0] sum,
   output reg cout
 );
@@ -12,8 +12,15 @@ module Sumador #(parameter ANCHO=8)(
   reg [ANCHO:0] sumita;
   always @(*) begin
     sumita = a + b;
-        if(Control == 2'b00)
+    if(Control == 4'b1000) begin
               sum = sumita[ANCHO-1:0];
-        cout = sumita[ANCHO];
+        	cout = sumita[ANCHO];
+    end
+   
+    if(Control == 4'b0010) begin
+              sum = 8'b00000000;
+        	cout = 1'b0;
+    end
   end
 endmodule
+

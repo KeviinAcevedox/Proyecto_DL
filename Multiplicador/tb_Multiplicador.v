@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_M_KCA;
+module tb_Multiplicador;
 
 // Definicion de las variables a utilizar
 reg Start;
@@ -20,8 +20,8 @@ Multiplicador_KCA DUT(
 
 // Generacion de graficas
 initial begin
-  $dumpfile("M_KCA.vcd");
-  $dumpvars(0, tb_M_KCA);
+  $dumpfile("Multiplicador.vcd");
+  $dumpvars(0, tb_Multiplicador);
 end
 
 

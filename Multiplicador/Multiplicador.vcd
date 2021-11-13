@@ -1,5 +1,5 @@
 $date
-	Sat Nov 13 10:19:07 2021
+	Sat Nov 13 14:31:52 2021
 $end
 $version
 	Icarus Verilog
@@ -7,7 +7,7 @@ $end
 $timescale
 	1ps
 $end
-$scope module tb_M_KCA $end
+$scope module tb_Multiplicador $end
 $var wire 1 ! Ready $end
 $var wire 17 " Producto [16:0] $end
 $var reg 1 # Clock $end

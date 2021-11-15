@@ -34,33 +34,26 @@ always begin
 end
 
 
-// Generar el reset
 initial begin
-    // En tiempo 0 se inicializan los datos
     Reset = 0;
     Start = 0;
-    Multiplicador = 8'b11010111;
-	Multiplicando = 8'b11011111;
+    Multiplicador = 8'b11010111; //215
+	Multiplicando = 8'b11011111; //223
 
     @(negedge Clock)
-    // Se quita el Reset y se enciende el sistema
     Reset = 1;
     #10
     Start = 1;
     #10 
     Start = 0;
-    // Se da un tiempo estimado para que termine con la primera operacion
     #1000
-    // Se colocan nuevos numeros
-    Multiplicador = 8'b11000111;
-	Multiplicando = 8'b01010101;
+    Multiplicador = 8'b11000111; //199
+	Multiplicando = 8'b01010101; //85
     #10
-    // Se inicia el proceso
     Start = 1;
     #10 
     Start = 0;
     #1000
-
     $finish;
 end
 endmodule

@@ -13,7 +13,7 @@ parameter Memoria=4'b0000;
 parameter Add_regs=4'b1000,Shift_regs=4'b0100;
 parameter Decr_P=4'b0010, Load_regs=4'b0001; 
 //memoria
-always @(posedge clk) begin
+always @(negedge clk) begin
 	if(!rst) state<=0;
 	else state<=next_state;
 end

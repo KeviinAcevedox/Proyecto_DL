@@ -47,6 +47,13 @@ initial begin
     #10 
     Start = 0;
     #1000
+    Multiplicador = 8'b11000111; //199
+	Multiplicando = 8'b01010101; //85
+    #10
+    Start = 1;
+    #10 
+    Start = 0;
+    #1000
     $finish;
 end
 endmodule
